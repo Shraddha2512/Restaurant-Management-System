@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyRestaurant.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">    <!--For icons in the footer-->
+    <link rel = "icon" icon=""
+      type = "image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            
+	    <div class="container-fluid">
+		    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="~/images/logo.png" style="width:45px" />
+                    The Food Town
+            </a>
+		
+		    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			
+		        <!-- NAVBAR LINKS -->
+		        <li class="nav-item">
+		            <a class="nav-link text-dark" href="#">Home</a>		
+		        </li>
+		        <li class="nav-item">
+			        <a class="nav-link text-dark" asp-area="" asp-page="/Index1">About Us</a>	
+		        </li>
+		        
+		
+				<!-- DROPDOWN OPTIONS -->
+		        <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">  Menu</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" 
+                                asp-area="Restaurant" asp-controller="Categories" asp-action="Index">Categories</a>
+                            <a class="dropdown-item"
+                                asp-area="Restaurant" asp-controller="Items" asp-action="Index">Items</a>
+
+                            <a class="dropdown-item" 
+                                asp-area="Restaurant" asp-controller="Customers" asp-action="Index">Customers</a>
+                            <a class="dropdown-item" 
+                                asp-area="Restaurant" asp-controller="Orders" asp-action="Index">Orders</a>
+                                 
+                                
+                        </div>
+                </li>
+                <li class="nav-item">
+			        <a class="nav-link text-dark" href="#">Reservation</a>	
+		        </li>
+                <li class="nav-item">
+		            <a class="nav-link text-dark" href="#">Contact</a>	
+	            </li>
+            </ul>
+		
+	    </div>
+	    </nav>
+      
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - MyRestaurant.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+         </div>  
+    </footer>
+  
+   
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
